@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+opencv-python
+torch
+mediapipe
+pillow
+numpy
+scipy
+scikit-image

@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Node modules
+node_modules/
+
+# Model weights
+*.h5
+*.ckpt
+*.pth
+
+# Environment files
+.env
+*.env
+
+# IDE configurations
+.vscode/
+.idea/

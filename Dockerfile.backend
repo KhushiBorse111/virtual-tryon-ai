@@ -10,14 +10,17 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements.txt if available
-# RUN COPY requirements.txt .
+# Copy requirements.txt
+COPY requirements.txt .
 
-# Install FastAPI and other Python dependencies
-RUN pip install fastapi uvicorn opencv-python
+# Install Python dependencies from requirements.txt
+RUN pip install -r requirements.txt
+
+# Copy the entire backend application code
+COPY backend/ .
 
 # Expose the FastAPI port
 EXPOSE 8000
 
 # Command to run the FastAPI application
-# CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
